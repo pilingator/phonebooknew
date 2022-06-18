@@ -30,10 +30,16 @@ def select_contact():
     return int(input('выберите контакт:'))
 
 def print_selected_contact(selected_contact):
-    print(f'выбран контакт: {selected_contact}')
-    
+    print(f'выбран контакт: {selected_contact[1]}, {selected_contact[2]}, {selected_contact[3]}, {selected_contact[4]}\n'+'-'*40)
+
+def print_report_delete_contact(contact):
+    print(f'контакт: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]} удален\n'+'-'*40)
+
+def print_report_change_contact(contact):
+    print(f'контакт изменен на: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]}\n'+'-'*40)
+   
 
 if __name__ == '__main__':
     print(main_menu())
-    print(what_find())
+    print(get_find())
     print(action_contact())

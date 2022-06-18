@@ -11,7 +11,6 @@ def action_contact(data):
     else:
         selected = data
     action = inter.action_contact()
-    
     if action == 1:
         change.change_contact(selected)
     elif action == 2:
