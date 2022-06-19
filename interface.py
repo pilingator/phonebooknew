@@ -1,5 +1,3 @@
-from unittest import result
-
 
 def main_menu():
     print('-'*40)
@@ -13,7 +11,10 @@ def main_menu():
 
 
 def get_find():
-    param = input('По какому параметру будем искать? имя, фамилия или номер\n_')
+    try:
+        param = int(input('По какому параметру будем искать? 1-имя, 2-фамилия или 3-номер\nлюбая другая - выход из программы\n_'))
+    except:
+        exit()
     value = input('Что будем искать? \n_')
     return (value, param)
 
@@ -37,6 +38,26 @@ def print_report_delete_contact(contact):
 
 def print_report_change_contact(contact):
     print(f'контакт изменен на: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]}\n'+'-'*40)
+
+def get_change():
+    print('выберите что надо изменить:\n1-имя\n2-фамилию\n3-телефон\n4-коментарий\n0-отмена')
+    flag = False
+    while not flag:
+        try:
+            area = int(input())
+        except:
+            print('введите цифру от 1 до 4')
+        if 0 < area <= 4: flag = True
+    changed_area =input('введите новые данные: ')
+    return (area, changed_area)
+
+
+def get_new_contact():
+    first_name = input('введите имя:')
+    last_name = input('введите фамилию:')
+    phone = input('введите телефон:')
+    cometary = input('введите коментарий:')
+    return ['', first_name, last_name, phone, cometary]
    
 
 if __name__ == '__main__':

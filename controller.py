@@ -15,4 +15,4 @@ def run_programm():
             if contacts.print_contact(found) == -1: continue
             action.action_contact(found)
         elif command == 3:
-            new_contact.create()
+            new_contact.create(inter.get_new_contact())

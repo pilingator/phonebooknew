@@ -1,21 +1,10 @@
 from from_phonebook import phonebook as data
 
-def find_contact(contact, area = 'фамилия'):
+def find_contact(contact, area):
     result = []
-    
-    if area == 'имя':
-        ind = 1
-    elif area == 'фамилия':
-        ind = 2
-    elif area == 'номер':
-        ind = 3
-    else:
-        ind = 2
-    for i in data:
-        if i[ind] == contact:
+    for i in data():
+        if i[area] == contact:
             result.append(i)
-    else:
-        ind = -1
     if not result: return -1
     return result
 

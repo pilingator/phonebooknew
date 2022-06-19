@@ -1,17 +1,26 @@
 import csv
 import from_phonebook 
 from interface import print_report_change_contact as report
+from interface import get_change as changed_info
 
-def change_contact(befo_id, after_id):
+
+def change_contact(contact):
     phonebook = from_phonebook.phonebook()
+    changed = changed_info()
     with open("phonebook.csv", "w", encoding='utf-8') as file:
         writer = csv.writer(file)
         for element in phonebook:
-            writer.writerow(after_id if element == befo_id else element)
-    report(after_id)
+            if element == contact:
+                contact[changed[0]] = changed[1]
+                element = contact
+            writer.writerow(element)
+    report(contact)
 
 
 
 if __name__ == '__main__':
-    change_contact(['3', 'Иван', 'Петров', '891234567877', ''], ['3', 'Иванушка', 'Петров', '891234567877', ''])
+    change_contact(['3', 'Иван', 'Петров', '891234567877', ''])
+    # changed_info[0] = 3
+    # changed_info[1] = 'Иванушка'
+
     print(from_phonebook.phonebook())
