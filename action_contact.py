@@ -9,11 +9,12 @@ def action_contact(data):
     if len(data) > 1:
         selected = s.select_contact(data)
     else:
-        selected = data
+        selected = data[0]
     action = inter.action_contact()
     if action == 1:
         change.change_contact(selected)
     elif action == 2:
         delete.del_contact(selected)
     elif action == 3:
-        export.export_contact(selected)
+        if inter.get_type_file() == 1: export.export_contact_to_csv(selected) 
+        else: export.export_contact_to_txt(selected)

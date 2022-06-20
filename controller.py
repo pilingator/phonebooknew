@@ -11,8 +11,15 @@ def run_programm():
         if command == 1: contacts.print_contact()
         elif command == 2:
             finding = inter.get_find()
-            found = f.find_contact(finding[0], finding[1])
+            if finding:
+                found = f.find_contact(finding[0], finding[1])
+            else:
+                continue
             if contacts.print_contact(found) == -1: continue
             action.action_contact(found)
         elif command == 3:
-            new_contact.create(inter.get_new_contact())
+            new_contact_data = inter.get_new_contact()
+            if f.exist_contact(new_contact_data):
+                if not inter.create_dubl(): continue
+            new_contact.create_contact(new_contact_data)
+                

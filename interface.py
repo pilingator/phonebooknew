@@ -12,9 +12,9 @@ def main_menu():
 
 def get_find():
     try:
-        param = int(input('По какому параметру будем искать? 1-имя, 2-фамилия или 3-номер\nлюбая другая - выход из программы\n_'))
+        param = int(input('По какому параметру будем искать? 1-имя, 2-фамилия или 3-номер\nлюбая другая - в главное меню\n_'))
     except:
-        exit()
+        return False
     value = input('Что будем искать? \n_')
     return (value, param)
 
@@ -37,7 +37,10 @@ def print_report_delete_contact(contact):
     print(f'контакт: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]} удален\n'+'-'*40)
 
 def print_report_change_contact(contact):
-    print(f'контакт изменен на: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]}\n'+'-'*40)
+    print(f'контакт изменен на: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]}\n')
+
+def print_export(contact, file):
+    print(f'контакт: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]} передан в файл: {file} ')
 
 def get_change():
     print('выберите что надо изменить:\n1-имя\n2-фамилию\n3-телефон\n4-коментарий\n0-отмена')
@@ -58,6 +61,26 @@ def get_new_contact():
     phone = input('введите телефон:')
     cometary = input('введите коментарий:')
     return ['', first_name, last_name, phone, cometary]
+
+
+def get_type_file():
+    print('в каком из форматов будем экспортировать контакт? 1-.csv 2-.txt, что-нибудь другое-отмена')
+    try:
+        type = int(input())
+        return type if 0 < type <= 2 else type/0
+    except:
+        print('введите цифру 1 или 2')
+
+
+def create_dubl():
+    try:
+        dubl = int(input('Такой контакт уже есть. Хотите сделать дубликат? 1-да, что-нибудь другое-отмена'))
+        return True if dubl == 1 else dubl/0
+    except:
+        print('Вы отменили создание контакта')
+        return False
+    
+    
    
 
 if __name__ == '__main__':
