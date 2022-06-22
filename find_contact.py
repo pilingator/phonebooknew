@@ -4,7 +4,7 @@ from from_phonebook import phonebook as data
 def find_contact(contact, area):
     result = []
     for i in data():
-        if i[area].lower == contact.lower:
+        if i[area].lower() == contact.lower():
             result.append(i)
     if not result: return -1
     return result

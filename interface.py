@@ -34,13 +34,16 @@ def print_selected_contact(selected_contact):
     print(f'выбран контакт: {selected_contact[1]}, {selected_contact[2]}, {selected_contact[3]}, {selected_contact[4]}\n'+'-'*40)
 
 def print_report_delete_contact(contact):
-    print(f'контакт: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]} удален\n'+'-'*40)
+    print(f'контакт: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]}: удален\n'+'-'*40)
 
 def print_report_change_contact(contact):
-    print(f'контакт изменен на: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]}\n')
+    print(f'контакт изменен на: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]}\n'+'-'*40')
+
+def print_report_new_contact(contact):
+    print(f'создан контакт: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]}\n'+'-'*40')
 
 def print_export(contact, file):
-    print(f'контакт: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]} передан в файл: {file} ')
+    print(f'контакт: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]} передан в файл: {file} \n'+'-'*40)
 
 def get_change():
     print('выберите что надо изменить:\n1-имя\n2-фамилию\n3-телефон\n4-коментарий\n0-отмена')
@@ -56,10 +59,12 @@ def get_change():
 
 
 def get_new_contact():
+    print('-'*40)
     first_name = input('введите имя:')
     last_name = input('введите фамилию:')
     phone = input('введите телефон:')
     cometary = input('введите коментарий:')
+    print('-'*40)
     return ['', first_name, last_name, phone, cometary]
 
 

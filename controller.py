@@ -11,8 +11,10 @@ def run_programm():
         if command == 1: contacts.print_contact()
         elif command == 2:
             finding = inter.get_find()
+            print(f"into controller finding: {finding}")
             if finding:
                 found = f.find_contact(finding[0], finding[1])
+                print(f'into controller found: {found}')
             else:
                 continue
             if contacts.print_contact(found) == -1: continue

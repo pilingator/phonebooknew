@@ -1,7 +1,9 @@
 from from_phonebook import phonebook as ph
 
 def print_contact(data = None):
+    print(f'into print_contacts data: {data}')
     if data == None: data = ph()
+    print(f'into print_contacts data: {data}')
     if data == -1:
         print('-'*40)
         print('контакт не найден')
