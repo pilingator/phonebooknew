@@ -3,7 +3,8 @@ import csv
 import interface as inter
 
 def export_contact_to_csv(contact):
-    contact[0] = contact[4] = ''
+    del contact[4]
+    del contact[0]
     file = "take_contact.csv"
     with open(file, "a", encoding='utf-8') as data:
         writer = csv.writer(data)
@@ -11,7 +12,8 @@ def export_contact_to_csv(contact):
     inter.print_export(contact, file)
 
 def export_contact_to_txt(contact):
-    contact[0] = contact[4] = ''
+    del contact[4]
+    del contact[0]
     file = "take_contact.txt"
     with open(file, "a", encoding='utf-8') as data:
         for i in contact:

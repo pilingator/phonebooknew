@@ -11,7 +11,6 @@ def find_contact(contact, area):
 
 
 def exist_contact(contact):
-    print(f'into_exist {contact}')
     for i in data():
         if i[1:3] == contact[1:3]: return True
     return False

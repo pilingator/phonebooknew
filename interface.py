@@ -37,13 +37,13 @@ def print_report_delete_contact(contact):
     print(f'контакт: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]}: удален\n'+'-'*40)
 
 def print_report_change_contact(contact):
-    print(f'контакт изменен на: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]}\n'+'-'*40')
+    print(f'контакт изменен на: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]}\n'+'-'*40)
 
 def print_report_new_contact(contact):
-    print(f'создан контакт: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]}\n'+'-'*40')
+    print(f'создан контакт: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]}\n'+'-'*40)
 
 def print_export(contact, file):
-    print(f'контакт: {contact[1]}, {contact[2]}, {contact[3]}, {contact[4]} передан в файл: {file} \n'+'-'*40)
+    print(f'контакт: {contact[0]}, {contact[1]}, {contact[2]} передан в файл: {file} \n'+'-'*40)
 
 def get_change():
     print('выберите что надо изменить:\n1-имя\n2-фамилию\n3-телефон\n4-коментарий\n0-отмена')
